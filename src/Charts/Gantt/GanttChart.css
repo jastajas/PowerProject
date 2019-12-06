@@ -1,0 +1,24 @@
+.gantGrid{
+    fill:rgb(0, 0, 0);
+    opacity: 0.1;
+}
+.gantGrid-date{
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    padding: 0;
+    margin: 0;
+    transform: translate(3px, -8px);
+    position: relative;
+    top: 0px;
+}
+.ganttCanvaHeader{
+    position: sticky;
+    top: 0px;
+}
+.ganttCanva{
+    
+}
+.gantt-chart{
+    height: 88vh;
+    overflow: scroll;
+}

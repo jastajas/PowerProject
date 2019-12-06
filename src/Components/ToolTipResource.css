@@ -1,0 +1,15 @@
+.toolTipResource{
+    background-color: rgba(65, 65, 65,1);
+    position: fixed;
+    padding: 10px 20px;
+    box-shadow: 1px 2px 1px rgb(190, 190, 190);
+    border-radius: 10px;
+}
+
+.resourceElement{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    color:  white;
+}

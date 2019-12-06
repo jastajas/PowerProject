@@ -1,0 +1,65 @@
+.taskList {
+  height: 100%;
+  width: 100%;
+}
+
+.taskList table {
+  width: 100%;
+  /* background-color: rgba(230, 230, 230, 1); */
+  border-collapse: collapse;
+}
+.taskList thead{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.taskList th{
+    height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.taskList tr{
+    
+    border-collapse: collapse;
+    border-bottom: gray solid 2px;
+}
+
+.taskList tbody td{
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(220, 220, 220, 1);
+    
+}
+.taskList tbody td:first-child::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 20px;
+ }
+
+.taskList tbody td:nth-child(2){
+    text-align: start;
+}
+
+.taskList tbody td:nth-child(5){
+    text-transform: uppercase;
+}
+
+.taskList tbody td tr td:first-of-type, .taskList thead tr th:first-of-type{
+    width: 50px;
+}
+.taskList tbody td tr td:nth-child(3), .taskList thead tr th:nth-child(3),
+.taskList tbody td tr td:nth-child(4), .taskList thead tr th:nth-child(4),
+.taskList tbody td tr td:nth-child(5), .taskList thead tr th:nth-child(5)
+{
+    width: 150px;
+}
+.taskList tbody td tr td:nth-child(6), .taskList thead tr th:nth-child(6)
+{
+    width: 250px;
+    overflow: hidden;
+}
+
+.taskList tbody td tr td:last-of-type, .taskList thead tr th:last-of-type{
+    width: 120px;
+}

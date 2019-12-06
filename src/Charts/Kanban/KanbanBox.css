@@ -1,0 +1,26 @@
+.kanbanBox{
+    width: 33.3%;
+    border: 2px white solid;
+}
+
+.headerKanban{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    border-bottom: 4px white solid;
+}
+.headerKanban h3{
+    text-transform: uppercase;
+}
+.headerKanban p{
+    background-color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+}
+
+.kanbanList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

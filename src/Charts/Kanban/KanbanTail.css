@@ -1,0 +1,11 @@
+.kanbanTail{
+    padding: 15px;
+    width: 90%;
+    background-color: rgb(250,250,250);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(110, 110, 110);
+    margin-top: 15px;
+}
+.taskOwner{
+    display: flex;
+}
