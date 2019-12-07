@@ -2,54 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="111a16f2-1813-4a2e-9e40-6ec41ca49b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Gantt/GanttChart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Gantt/GanttChart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Gantt/GanttTask.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Gantt/GanttTask.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Kanban/KanbanBoard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Kanban/KanbanBoard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Kanban/KanbanBox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Kanban/KanbanBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Kanban/KanbanTail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/Kanban/KanbanTail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/List/TaskList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/List/TaskList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/List/TaskRow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/MainPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Charts/MainPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/TaskForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/TaskForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ToolTipResource.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ToolTipResource.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/PowerDate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/arrow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/done.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/duration.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/inProgress.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/main.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/rocket.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/toDo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/upload.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/user.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/ChartNav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/ChartNav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Filters.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Filters.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/MainChart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/MainChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/logo.svg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,8 +79,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -137,6 +103,22 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="predeploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="predeploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.predeploy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -161,8 +143,16 @@
       <workItem from="1574920494361" duration="330000" />
       <workItem from="1574973252297" duration="29542000" />
       <workItem from="1575491627617" duration="650000" />
-      <workItem from="1575662488363" duration="3282000" />
+      <workItem from="1575662488363" duration="7488000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial version">
+      <created>1575666410289</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575666410289</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,5 +170,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial version" />
   </component>
 </project>

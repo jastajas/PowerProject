@@ -236,7 +236,7 @@ class App extends React.Component {
             .filter(task => taskFilter(task, this.state.filter));
 
         return (
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <>
                     <header>
                         <Header handleFile={this.handleFile} name={this.state.file?this.state.file.name:null} filePath={this.state.filePath}/>
