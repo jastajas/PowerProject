@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/PowerProject/static/css/main.1854930c.chunk.css",
+    "main.js": "/PowerProject/static/js/main.849f7f31.chunk.js",
+    "main.js.map": "/PowerProject/static/js/main.849f7f31.chunk.js.map",
+    "runtime-main.js": "/PowerProject/static/js/runtime-main.74822451.js",
+    "runtime-main.js.map": "/PowerProject/static/js/runtime-main.74822451.js.map",
+    "static/js/2.8a7a4f97.chunk.js": "/PowerProject/static/js/2.8a7a4f97.chunk.js",
+    "static/js/2.8a7a4f97.chunk.js.map": "/PowerProject/static/js/2.8a7a4f97.chunk.js.map",
+    "index.html": "/PowerProject/index.html",
+    "precache-manifest.2d58cc4de7840971c5bef333b9150d21.js": "/PowerProject/precache-manifest.2d58cc4de7840971c5bef333b9150d21.js",
+    "service-worker.js": "/PowerProject/service-worker.js",
+    "static/css/main.1854930c.chunk.css.map": "/PowerProject/static/css/main.1854930c.chunk.css.map",
+    "static/media/arrow.svg": "/PowerProject/static/media/arrow.c317b9c2.svg",
+    "static/media/done.svg": "/PowerProject/static/media/done.32ea9380.svg",
+    "static/media/duration.svg": "/PowerProject/static/media/duration.4687d6cb.svg",
+    "static/media/inProgress.svg": "/PowerProject/static/media/inProgress.33699397.svg",
+    "static/media/main.jpg": "/PowerProject/static/media/main.9f46ca12.jpg",
+    "static/media/rocket.svg": "/PowerProject/static/media/rocket.bc67068e.svg",
+    "static/media/toDo.svg": "/PowerProject/static/media/toDo.fdc1b07c.svg",
+    "static/media/upload.svg": "/PowerProject/static/media/upload.71cfd92a.svg",
+    "static/media/user.svg": "/PowerProject/static/media/user.209f1cd7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74822451.js",
+    "static/js/2.8a7a4f97.chunk.js",
+    "static/css/main.1854930c.chunk.css",
+    "static/js/main.849f7f31.chunk.js"
+  ]
+}
