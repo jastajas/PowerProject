@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c85c273cf939f7b3b6a89a4f4e506fa0",
+    "revision": "c16c2e53495531fa205731bf5e3afa17",
     "url": "/PowerProject/index.html"
   },
   {
-    "revision": "41e720deb8e9104d8f65",
+    "revision": "c06e5c764e5861b3a080",
     "url": "/PowerProject/static/css/main.1854930c.chunk.css"
   },
   {
-    "revision": "edf4a41dab85326e8925",
-    "url": "/PowerProject/static/js/2.8a7a4f97.chunk.js"
+    "revision": "9a3b1a812dbdbd8d4446",
+    "url": "/PowerProject/static/js/2.92e605ab.chunk.js"
   },
   {
-    "revision": "41e720deb8e9104d8f65",
-    "url": "/PowerProject/static/js/main.18dde212.chunk.js"
+    "revision": "c06e5c764e5861b3a080",
+    "url": "/PowerProject/static/js/main.62200777.chunk.js"
   },
   {
     "revision": "a7eca1f373c8a63ec50b",
