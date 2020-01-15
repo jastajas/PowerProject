@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/PowerProject/static/css/main.1854930c.chunk.css",
-    "main.js": "/PowerProject/static/js/main.62200777.chunk.js",
-    "main.js.map": "/PowerProject/static/js/main.62200777.chunk.js.map",
+    "main.js": "/PowerProject/static/js/main.d5eb90c6.chunk.js",
+    "main.js.map": "/PowerProject/static/js/main.d5eb90c6.chunk.js.map",
     "runtime-main.js": "/PowerProject/static/js/runtime-main.74822451.js",
     "runtime-main.js.map": "/PowerProject/static/js/runtime-main.74822451.js.map",
     "static/js/2.92e605ab.chunk.js": "/PowerProject/static/js/2.92e605ab.chunk.js",
     "static/js/2.92e605ab.chunk.js.map": "/PowerProject/static/js/2.92e605ab.chunk.js.map",
     "index.html": "/PowerProject/index.html",
-    "precache-manifest.fccdd7901eeddcf0e604a5ab0c94d66b.js": "/PowerProject/precache-manifest.fccdd7901eeddcf0e604a5ab0c94d66b.js",
+    "precache-manifest.45f9ef2d417c9cd75874dfa9fb588bf1.js": "/PowerProject/precache-manifest.45f9ef2d417c9cd75874dfa9fb588bf1.js",
     "service-worker.js": "/PowerProject/service-worker.js",
     "static/css/main.1854930c.chunk.css.map": "/PowerProject/static/css/main.1854930c.chunk.css.map",
     "static/media/arrow.svg": "/PowerProject/static/media/arrow.c317b9c2.svg",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.74822451.js",
     "static/js/2.92e605ab.chunk.js",
     "static/css/main.1854930c.chunk.css",
-    "static/js/main.62200777.chunk.js"
+    "static/js/main.d5eb90c6.chunk.js"
   ]
 }
