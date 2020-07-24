@@ -2,13 +2,9 @@ import React from "react";
 import KanbanTail from './KanbanTail';
 import './KanbanBox.css';
 
-
-
 const KanbanBox = (props) => {
 
-
-
-  const kanbanTails = props.kanbanTasks.map(task => <KanbanTail key={task.id} task={task} activateToolTip={props.activateToolTip} disactivateToolTip={props.disactivateToolTip}/>);
+  const kanbanTails = props.kanbanTasks.map(task => <KanbanTail key={task.id} task={task} activateToolTip={props.activateToolTip} disactivateToolTip={props.disactivateToolTip} taskNameGenerator={props.taskNameGenerator}/>);
 
   return (
     <div className="kanbanBox">

@@ -56,6 +56,12 @@
     margin-bottom: 5px;
     padding: 5px 0;
 }
+
+.taskForm .formElement .errorMsg{
+    color: darkred;
+    font-size: 10px;
+}
+
 .taskForm .resourceBlock{
     width: 100%;
     display: flex;

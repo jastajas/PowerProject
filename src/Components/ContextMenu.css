@@ -1,0 +1,44 @@
+.buttonSetContex {
+    width: 150px;
+    background-color: rgb(56, 56, 56);
+    position: fixed;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.buttonSetContex li{
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+}
+
+.buttonSetContex button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: rgb(56, 56, 56);
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+}
+.buttonSetContex li:last-of-type button{
+    border-bottom: none;
+}
+
+.buttonSetContex button:hover {
+    background-color: rgb(86, 86, 86);
+}
+
+.buttonSetContex button:active {
+    background-color: rgb(26, 26, 26);
+}
+
+.flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

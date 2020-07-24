@@ -25,15 +25,16 @@ const getBorderStyle = status =>{
 }
 
 const KanbanTail = props => {
-  const {complexName, resources, start, end, status, id} = props.task;
+  const {assignments, start, finish, status, id, outlineNumber, outlineLevel, name} = props.task;
 
-    
+  const complexName = outlineLevel > 1 ? [...props.taskNameGenerator(outlineNumber), name] : [name];
+
   const borderStyle = getBorderStyle(status);
 
 
-    const taskOwners = resources.length ? (
-        <div key={resources[0].id} className="taskOwner" onMouseOver={ev => props.activateToolTip(ev, id)} onMouseOut={props.disactivateToolTip}>
-            <img src={User} alt="" /> <p>{resources[0].resource.name}</p> {resources.length > 1 && (<p> ...</p>)}
+    const taskOwners = assignments.length ? (
+        <div key={assignments[0].id} className="taskOwner" onMouseOver={ev => props.activateToolTip(ev, id)} onMouseOut={props.disactivateToolTip}>
+            <img src={User} alt="" /> <p>{assignments[0].resource.name}</p> {assignments.length > 1 && (<p> ...</p>)}
         </div>) : (<p>-</p>);
 
   const taskName = complexName.map((name, index) => (<p key={index}>{name}</p>));
@@ -49,7 +50,7 @@ const KanbanTail = props => {
         </p>
         <p>
           Deadline:{" "}
-          {end}
+          {finish}
         </p>
       </div>
     </div>

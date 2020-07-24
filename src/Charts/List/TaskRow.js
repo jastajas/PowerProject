@@ -1,19 +1,19 @@
 import React from 'react';
- 
+
 const getStatusColor = statusName => {
     let statusColor = null
     switch (statusName) {
-    case "done":
-        statusColor = "rgb(139, 204, 143)";
-        break;
-    case "to do":
-        statusColor = "rgb(204, 139, 139)";
-        break;
-    case "in progress":
-        statusColor = "rgb(242, 238, 153)";
-        break;
-    default:
-        statusColor = "transparent";
+        case "done":
+            statusColor = "rgb(139, 204, 143)";
+            break;
+        case "to do":
+            statusColor = "rgb(204, 139, 139)";
+            break;
+        case "in progress":
+            statusColor = "rgb(242, 238, 153)";
+            break;
+        default:
+            statusColor = "transparent";
     }
 
     return {backgroundColor: statusColor};
@@ -22,19 +22,24 @@ const getStatusColor = statusName => {
 
 const TaskRow = props => {
 
-    const {id, complexName, start, end, status, resources, percentComplete} = props.task;
+    const {id, start, finish, status, assignments, percentComplete, selected, outlineLevel, outlineNumber, name} = props.task;
 
-    const resource = resources.length ? resources[0].resource.name : "-";
-    
-    return (<tr onDoubleClick={()=>props.activateTaskForm(id)}>
-        <td>{props.index + 1}</td>
-        <td>{complexName.join(" / ")}</td>
-        <td>{start.substring(0,10)}</td>
-        <td>{end.substring(0,10)}</td>
+    const indentation = {paddingLeft: (outlineLevel-1)*20}
+    // const complexName = outlineLevel > 1 ? [...props.taksNameGenrator(outlineNumber), name] : [name];
+
+    const resource = assignments.length ? assignments[0].resource.name : "-";
+
+    return (<tr onDoubleClick={() => props.activateTaskForm(id)}>
+        <td>{outlineNumber}</td>
+        <td style={indentation}>{name}</td>
+        <td>{start.substring(0, 10)}</td>
+        <td>{finish.substring(0, 10)}</td>
         <td style={getStatusColor(status)}>{status}</td>
-        <td style={{cursor: "default"}} onMouseOver={ev=>{ props.activateToolTip(ev,id);}} onMouseOut={props.disactivateToolTip}>{resource + (resources.length > 1 ? " ..." : "")}</td>
-<td onDoubleClick={ev => ev.stopPropagation()}>{percentComplete}</td>
+        <td style={{cursor: "default"}} onMouseOver={ev => {props.activateToolTip(ev, id);}}
+                                        onMouseOut={props.disactivateToolTip}>{resource + (assignments.length > 1 ? " ..." : "")}</td>
+        <td onDoubleClick={ev => ev.stopPropagation()}>{percentComplete}</td>
+        <td><input type="checkbox" checked={selected} onChange={ev=>props.handleTaskSelect(ev,id)}/></td>
     </tr>);
 }
- 
+
 export default TaskRow;

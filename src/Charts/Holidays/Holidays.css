@@ -1,0 +1,33 @@
+.holidays{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.holidays table{
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.holidays th{
+    text-transform: uppercase;
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(220, 220, 220, 1);
+}
+.holidays tr{
+  border-bottom: solid rgb(240, 240, 240) 3px;
+}
+
+.holidays td{
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(220, 220, 220, 1);
+}
+.holidays td:nth-child(2){
+    text-align: start;
+    padding-left: 40px;
+}

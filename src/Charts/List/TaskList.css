@@ -59,7 +59,10 @@
     width: 250px;
     overflow: hidden;
 }
-
-.taskList tbody td tr td:last-of-type, .taskList thead tr th:last-of-type{
+.taskList tbody td tr td:nth-child(7), .taskList thead tr th:nth-child(7){
     width: 120px;
 }
+
+/*.taskList tbody td tr td:last-of-type, .taskList thead tr th:last-of-type{*/
+/*    width: 120px;*/
+/*}*/

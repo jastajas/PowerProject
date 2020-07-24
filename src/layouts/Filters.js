@@ -14,15 +14,24 @@ class Filters extends React.Component {
     }
 
     render() {
-        const {filters} = this.props;
-        const {setFilter, resources} = this.props;
+        const {filters ,setFilter, resources, statusesList} = this.props;
         const angleFilterArrow = this.state.isExtended ? 180 : 0;
+        const statuses = [];
 
         const departmentList = resources && resources.filter(resource => resource.department !== "")
                 .map(resource => resource.department)
                 .filter((department, index, array) => array.indexOf(department) === index && department !== null)
-                .map((department, index) => (<option key={index} value={department} selected={department===filters.get("department")}>{department}</option>));
+                .map((department, index) => (<option key={index} value={department} >{department}</option>));
 
+        if(statusesList){
+            let index = 0;
+            for (let status in statusesList){
+                statuses.push((<option key={index}
+                                       value={statusesList[status]}
+                                      >{statusesList[status].toUpperCase()}</option>));
+                index++;
+            }
+        }
 
         return (
             <section className="filters">
@@ -42,9 +51,9 @@ class Filters extends React.Component {
                         <button type="button" onClick={ev=>this.props.clearFilter(ev)} name="start" className="clear-button">X</button>
                     </div>
                     <div className="inputBox">
-                        <label htmlFor="endDateFilter">task end:</label>
-                        <input id="endDateFilter" type="date" name="end" onChange={setFilter} value={filters.get("end")}/>
-                        <button type="button" onClick={ev=>this.props.clearFilter(ev)} name="end" className="clear-button">X</button>
+                        <label htmlFor="endDateFilter">task finish:</label>
+                        <input id="endDateFilter" type="date" name="finish" onChange={setFilter} value={filters.get("finish")}/>
+                        <button type="button" onClick={ev=>this.props.clearFilter(ev)} name="finish" className="clear-button">X</button>
                     </div>
                     <div className="inputBox">
                         <label htmlFor="personFilter">task owner:</label>
@@ -53,11 +62,19 @@ class Filters extends React.Component {
                     </div>
                     <div className="inputBox">
                         <label htmlFor="departmentFilter">department:</label>
-                        <select id="departmentFilter" name="department" onChange={setFilter} defaultValue="">
+                        <select id="departmentFilter" name="department" onChange={setFilter} value={filters.get("department")}>
                             <option value="">Select...</option>
                             {departmentList || false}
                         </select>
                         <button type="button" onClick={ev=>this.props.clearFilter(ev)} name="department" className="clear-button">X</button>
+                    </div>
+                    <div className="inputBox">
+                        <label htmlFor="statusFilter">status:</label>
+                        <select id="statusFilter" name="status" onChange={setFilter} value={filters.get("status")}>
+                            <option value="">Select...</option>
+                            {statuses || false}
+                        </select>
+                        <button type="button" onClick={ev=>this.props.clearFilter(ev)} name="status" className="clear-button">X</button>
                     </div>
                     <button type="button" onClick={ev=>this.props.clearFilter(ev)} name="all" className="clear-all-button">clear all</button>
                 </div>

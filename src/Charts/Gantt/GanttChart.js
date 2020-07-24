@@ -2,36 +2,36 @@ import React from 'react';
 import "./GanttChart.css";
 import GanttTask from "./GanttTask";
 import PowerDate from "../../Service/PowerDate";
+import PowerFilter from "../../Service/PowerFilter";
 
+const ganttTaskFacotry = (task, minTimeValue, resolution, ordinalNo, taskInterval, taskNameFactory) => {
 
-const ganttTaskFacotry = (task, minTimeValue, resolution, ordinalNo, taskInterval) => {
+    const {start, finish, outlineLevel, outlineNumber, name} = task;
 
-    const {start, end, complexName} = task;
+    const complexName = outlineLevel > 1 ? [...taskNameFactory(outlineNumber), name] : [name];
 
     const y = ordinalNo ? ordinalNo * taskInterval : ordinalNo;
 
-    let width = PowerDate.dateToMilliseconds(end) * resolution - PowerDate.dateToMilliseconds(start) * resolution;
+    let width = PowerDate.localDateToMilliseconds(finish) * resolution - PowerDate.localDateToMilliseconds(start) * resolution;
     width = width || 1;
 
-    const x = (PowerDate.dateToMilliseconds(task.start) - minTimeValue) * resolution;
+    const x = (PowerDate.localDateToMilliseconds(task.start) - minTimeValue) * resolution;
 
-    const name = complexName.join(" / ");
+    const fullName = complexName.join(" / ");
 
-    return {x, y, width, name}
+    return {x, y, width, fullName}
 }
 
-const convertToGantTasks = (tasks, ganttConfig) => {
+const convertToGantTasks = (tasks, ganttConfig, taskNameGenerator) => {
 
     const maxTimeValue = PowerDate.getMaxTaskTimeValue(tasks);
 
     const minTimeValue = PowerDate.getMinTaskTimeValue(tasks);
 
-    const ganttResolution = ganttConfig.ganttCanvaWidth / (maxTimeValue - minTimeValue);
-
     const taskInterval = ganttConfig.taskHeight + ganttConfig.taskDescriptionSize + ganttConfig.gapSize + ganttConfig.innerGapSize;
 
     const ganttTasks = tasks.filter(task => task.isFinal)
-        .map((task, index) => ganttTaskFacotry(task, minTimeValue, ganttResolution, index, taskInterval));
+        .map((task, index) => ganttTaskFacotry(task, minTimeValue, /*ganttResolution*/ ganttConfig.resolution, index, taskInterval, taskNameGenerator));
 
     return ganttTasks;
 
@@ -103,6 +103,7 @@ class GanttChart extends React.Component {
         zoom: 1,
     }
 
+
     componentDidUpdate(prevProps, prevState) {
         const nominalWidth = this.props.tasks.length && setGanttNominalWidth(this.props.tasks);
         nominalWidth !== prevState.nominalWidth && this.setState({nominalWidth,zoom:1});
@@ -111,9 +112,41 @@ class GanttChart extends React.Component {
     handleZoomChange = (ev)=>{
 
         const zoom = ev.target.value;
+        this.state.nominalWidth * zoom < 1800 || this.setState({zoom});
+    }
 
-        this.setState({zoom});
+    getSuperTaskName = outlineNumber => {
 
+        let complexName = [];
+
+        const splitNo = outlineNumber.split(".");
+
+        const searchedNo = splitNo.slice(0, splitNo.length-1).join(".");
+
+        const task = this.props.tasks.find(task => task.outlineNumber === searchedNo);
+
+        if(task.outlineLevel > 1){
+            complexName = [...this.getSuperTaskName(task.outlineNumber)];
+        }
+
+        return [...complexName, task.name];
+
+    }
+
+    primaryFilter = (tasks) =>{
+        const powerFilter = new PowerFilter();
+
+        const {filter} = this.props;
+
+        return tasks.filter(task => task.isFinal && powerFilter.setTask(task)
+            .checkName(filter.get("name"))
+            .checkTaskBeforeDate(filter.get("finish"))
+            .checkTaskAfterDate(filter.get("start"))
+            .checkDepartment(filter.get("department"))
+            .checkTaskOwner(filter.get("person"))
+            .checkStatus(filter.get("status"))
+            .filterAll()
+        );
     }
 
     ganttConfig = {
@@ -129,9 +162,7 @@ class GanttChart extends React.Component {
     }
 
     render() {
-
         this.ganttConfig.ganttCanvaWidth = this.state.nominalWidth * this.state.zoom < 1800 ? 1800 : this.state.nominalWidth * this.state.zoom;
-
 
         const zoomOptions = this.zoomScope.map(zoom => (<option value={zoom}>{zoom}</option>));
 
@@ -139,23 +170,32 @@ class GanttChart extends React.Component {
         let ganttTasks = null;
         let ganttGrid = null;
         let ganttGridDates = null;
-        
-        if (this.props.tasks.length) {
-            h = (this.props.tasks.filter(task => task.isFinal).length * (this.ganttConfig.taskHeight + this.ganttConfig.taskDescriptionSize + this.ganttConfig.innerGapSize + this.ganttConfig.gapSize));
-            ganttTasks = convertToGantTasks(this.props.tasks, this.ganttConfig);
-            ganttTasks = ganttTasks.map(task => (<GanttTask task={task} ganttConfig={this.ganttConfig}/>));
-            ganttGrid = drawCanvaGrid(this.ganttConfig, PowerDate.getMinTaskTimeValue(this.props.tasks), PowerDate.getMaxTaskTimeValue(this.props.tasks));
-            ganttGridDates = getGridDates(this.ganttConfig, PowerDate.getMinTaskTimeValue(this.props.tasks), PowerDate.getMaxTaskTimeValue(this.props.tasks));
+
+        const {tasks} = this.props;
+
+        if (tasks.length) {
+           const {taskHeight, taskDescriptionSize,innerGapSize, gapSize, ganttCanvaWidth} = this.ganttConfig;
+
+           const filteredTasks = this.primaryFilter(tasks);
+           const minTime = PowerDate.getMinTaskTimeValue(filteredTasks);
+           const maxTime = PowerDate.getMaxTaskTimeValue(filteredTasks);
+
+           this.ganttConfig.resolution = ganttCanvaWidth / (maxTime - minTime);
+
+           h = (filteredTasks.filter(task => task.isFinal).length * (taskHeight + taskDescriptionSize + innerGapSize + gapSize));
+           ganttTasks = convertToGantTasks(filteredTasks, this.ganttConfig, this.getSuperTaskName)
+                .map(task => (<GanttTask task={task} ganttConfig={this.ganttConfig}/>));
+           ganttGrid = drawCanvaGrid(this.ganttConfig, minTime, maxTime);
+           ganttGridDates = getGridDates(this.ganttConfig, minTime, maxTime);
         }
          
         return (<section className="gantt-chart">
         <svg width={this.ganttConfig.ganttCanvaWidth + 200} height="50px" className="ganttCanvaHeader">
-            {ganttGridDates || false}   
+            {ganttGridDates}
         </svg>
         <svg width={this.ganttConfig.ganttCanvaWidth + 200} height={h} className="ganttCanva">
-            {ganttGrid || false}
-            {/* {ganttGridDates || false} */}
-            {ganttTasks || false}
+            {ganttGrid}
+            {ganttTasks}
         </svg>
         <select className="zoomSelection" name="zoom" value={this.state.zoom} onChange={ev=>this.handleZoomChange(ev)}>
              {zoomOptions}
