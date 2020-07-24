@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/PowerProject/precache-manifest.45f9ef2d417c9cd75874dfa9fb588bf1.js"
+  "/PowerProject/precache-manifest.ae880dde368d14474173fa55b432d966.js"
 );
 
 self.addEventListener('message', (event) => {

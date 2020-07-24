@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ed6eb8ee2801d8189b9b43ff8f053c46",
+    "revision": "bf4902d24499c42843945ff7b02430fa",
     "url": "/PowerProject/index.html"
   },
   {
-    "revision": "da48e7026a12751b68c3",
-    "url": "/PowerProject/static/css/main.1854930c.chunk.css"
+    "revision": "2b6b90b9384537e9e656",
+    "url": "/PowerProject/static/css/main.87958338.chunk.css"
   },
   {
-    "revision": "9a3b1a812dbdbd8d4446",
-    "url": "/PowerProject/static/js/2.92e605ab.chunk.js"
+    "revision": "0f9d7cd24328e156d021",
+    "url": "/PowerProject/static/js/2.29497493.chunk.js"
   },
   {
-    "revision": "da48e7026a12751b68c3",
-    "url": "/PowerProject/static/js/main.d5eb90c6.chunk.js"
+    "revision": "2b6b90b9384537e9e656",
+    "url": "/PowerProject/static/js/main.5ea3c1c8.chunk.js"
   },
   {
     "revision": "a7eca1f373c8a63ec50b",
@@ -32,12 +32,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/PowerProject/static/media/duration.4687d6cb.svg"
   },
   {
+    "revision": "2de0905bddb887e3b9562d9c2e418436",
+    "url": "/PowerProject/static/media/forwArrow.2de0905b.svg"
+  },
+  {
     "revision": "336993977fca0b1f2d0f6f6486d63ac6",
     "url": "/PowerProject/static/media/inProgress.33699397.svg"
   },
   {
     "revision": "9f46ca128bea128763c9c4bec1bfb3ae",
     "url": "/PowerProject/static/media/main.9f46ca12.jpg"
+  },
+  {
+    "revision": "1304fdacd75b35cdbe8ceef135c5d1ce",
+    "url": "/PowerProject/static/media/prevArrow.1304fdac.svg"
   },
   {
     "revision": "bc67068ef47bc653349370fc69bffff9",

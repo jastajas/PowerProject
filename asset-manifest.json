@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/PowerProject/static/css/main.1854930c.chunk.css",
-    "main.js": "/PowerProject/static/js/main.d5eb90c6.chunk.js",
-    "main.js.map": "/PowerProject/static/js/main.d5eb90c6.chunk.js.map",
+    "main.css": "/PowerProject/static/css/main.87958338.chunk.css",
+    "main.js": "/PowerProject/static/js/main.5ea3c1c8.chunk.js",
+    "main.js.map": "/PowerProject/static/js/main.5ea3c1c8.chunk.js.map",
     "runtime-main.js": "/PowerProject/static/js/runtime-main.74822451.js",
     "runtime-main.js.map": "/PowerProject/static/js/runtime-main.74822451.js.map",
-    "static/js/2.92e605ab.chunk.js": "/PowerProject/static/js/2.92e605ab.chunk.js",
-    "static/js/2.92e605ab.chunk.js.map": "/PowerProject/static/js/2.92e605ab.chunk.js.map",
+    "static/js/2.29497493.chunk.js": "/PowerProject/static/js/2.29497493.chunk.js",
+    "static/js/2.29497493.chunk.js.map": "/PowerProject/static/js/2.29497493.chunk.js.map",
     "index.html": "/PowerProject/index.html",
-    "precache-manifest.45f9ef2d417c9cd75874dfa9fb588bf1.js": "/PowerProject/precache-manifest.45f9ef2d417c9cd75874dfa9fb588bf1.js",
+    "precache-manifest.ae880dde368d14474173fa55b432d966.js": "/PowerProject/precache-manifest.ae880dde368d14474173fa55b432d966.js",
     "service-worker.js": "/PowerProject/service-worker.js",
-    "static/css/main.1854930c.chunk.css.map": "/PowerProject/static/css/main.1854930c.chunk.css.map",
+    "static/css/main.87958338.chunk.css.map": "/PowerProject/static/css/main.87958338.chunk.css.map",
     "static/media/arrow.svg": "/PowerProject/static/media/arrow.c317b9c2.svg",
     "static/media/done.svg": "/PowerProject/static/media/done.32ea9380.svg",
     "static/media/duration.svg": "/PowerProject/static/media/duration.4687d6cb.svg",
+    "static/media/forwArrow.svg": "/PowerProject/static/media/forwArrow.2de0905b.svg",
     "static/media/inProgress.svg": "/PowerProject/static/media/inProgress.33699397.svg",
     "static/media/main.jpg": "/PowerProject/static/media/main.9f46ca12.jpg",
+    "static/media/prevArrow.svg": "/PowerProject/static/media/prevArrow.1304fdac.svg",
     "static/media/rocket.svg": "/PowerProject/static/media/rocket.bc67068e.svg",
     "static/media/toDo.svg": "/PowerProject/static/media/toDo.fdc1b07c.svg",
     "static/media/upload.svg": "/PowerProject/static/media/upload.71cfd92a.svg",
@@ -23,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.74822451.js",
-    "static/js/2.92e605ab.chunk.js",
-    "static/css/main.1854930c.chunk.css",
-    "static/js/main.d5eb90c6.chunk.js"
+    "static/js/2.29497493.chunk.js",
+    "static/css/main.87958338.chunk.css",
+    "static/js/main.5ea3c1c8.chunk.js"
   ]
 }
